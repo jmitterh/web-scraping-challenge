@@ -53,11 +53,6 @@ def scrape():
     # Scrape page into Soup
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
-    # Click the 'full image' button on each page
-    try:
-        new_peg = browser.click_link_by_id('full_image')
-    except:
-        print("Error, check the link id")
     fancybox = soup.find_all('a', class_='fancybox')[0]
     img = fancybox.get('data-fancybox-href')
     featured_image_url = f'https://www.jpl.nasa.gov/{img}'
