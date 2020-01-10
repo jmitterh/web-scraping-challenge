@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-md-8">
             <h2>Featured Mars Image</h2>
-            <img src="{{ mars.featured_image_url }}" alt="Mars-Image">
+            <img src="{{ mars.featured_image_url }}" class="img-fluid" alt="Responsive image">
         </div>
 
         <div class="col-md-4 col-xs-12">
@@ -34,26 +34,36 @@
             <p>{{ mars.mars_weather }}</p>
             <br>
             <h4>Mars Facts</h4>
-            <p>{{ mars.mars_facts|safe }}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="page-header">
-                <h2>Mars Hemispheres</h2><b
+            <div class="mars-table">
+                {{ mars.mars_facts|safe }}
             </div>
         </div>
     </div>
+    <hr>
 
-    <div class="row" id="mars-heme">
-        {% for i in mars.hemisphere_image_urls %}
-        <div class="col-md-6">
-            <h5>{{ i.title }}</h5>
-            <img src="{{ i.img_url }}" alt="Mars-Image">
+    <div class="row">
+
+        <div class="card-deck">
+            <hr>
+            <div class="col-md-12">
+                <h2 class='mars-h'>Mars Hemispheres</h2>
+                <div class="row" id="mars-hemispheres">
+                    {% for i in mars.hemisphere_image_urls %}
+                    <div class="col-md-6">
+                        <div class="card text-black bg-light">
+                            <!-- If Images are False/None/Non-Existent, Then Default to Error Message -->
+                            <img class="card-img-top"
+                                 src="{{ i.img_url }}" class="img-fluid" alt="Responsive image"/>
+                            <div class="card-body">
+                                <p class="card-text">{{ i.title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        {% endfor %}
     </div>
-
 
 </div>
 

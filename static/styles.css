@@ -1,3 +1,27 @@
-#mars-img, img {
-background: 50%;
+
+ # heme {
+  height: '100px';
+  width: '500px';
 }
+
+ div .img {
+  display: 'block';
+  margin-left: 'auto';
+  margin-right: 'auto';
+  width: '50%';
+}
+
+ .mars-table {
+   margin 25%;
+}
+
+.mars-h {
+text-align: center;
+color: Tomato;
+}
+
+.card{
+margin: 30px;
+}
+
+
