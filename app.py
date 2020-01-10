@@ -13,7 +13,7 @@ mongo = PyMongo(app)
 
 # Define the collection and drop any existing data for this exercise
 mars_db = mongo.db.mars
-mars_db.drop()
+#mars_db.drop()
 
 # Create route that renders index.html template
 @app.route('/')
